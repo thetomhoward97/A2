@@ -13,17 +13,21 @@ class Crop:
         self._status = 'Seed'
         self._type='Generic'
 
+    def needs(self):
+        #return dictonary w light + water needed
+        return {'light need':self._light_need, 'water need':self._water_need}
+
+    #reports current state of crop
+    def report(self):
+        #returns dictonary
+        return {'type':self._type,'status':self._status,'growth':self._growth,'days growing':self._days_growing}
+    
 def main():
     #instantiate
     new_crop = Crop(1,4,3)
     #test
-    print(new_crop._status)
-    print(new_crop._light_need)
-    print(new_crop._water_need)
-    new_crop2 = Crop(2,5,7)
-    print(new_crop2._status)
-    print(new_crop2._light_need)
-    print(new_crop2._water_need)
+    print(new_crop.needs())
+    print(new_crop.report())
 
 if __name__ == '__main__':
     main()
