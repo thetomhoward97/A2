@@ -1,3 +1,5 @@
+import random
+
 class Crop:
     """A generic food crop"""
 
@@ -41,14 +43,20 @@ class Crop:
         self._days_growing += 1
         #udate status
         self._update_status()
-        
+
+def auto_grow(crop,days):
+    for day in range(days):
+        light = random.randint(1,10)
+        water = random.randint(1,10)
+        crop.grow(light,water)
+
 def main():
     #instantiate
     new_crop = Crop(1,4,3)
     #test
     print(new_crop.needs())
     print(new_crop.report())
-    new_crop.grow(4,4)
+    auto_grow(new_crop,30)
     print(new_crop.report())
 
 if __name__ == '__main__':
