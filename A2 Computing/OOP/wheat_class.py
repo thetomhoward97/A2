@@ -1,7 +1,7 @@
 from crop_class import *
 
 class Wheat(Crop):
-    '''a wheat croo'''
+    '''a wheat crop'''
 
     def __init__(self):
         super().__init__(2,5,6)
